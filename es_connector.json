@@ -1,0 +1,14 @@
+{
+  "name": "es-sink-wikipedia",
+  "config": {
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": false,
+    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+    "key.ignore": "false",
+    "schema.ignore": "true",
+    "type.name": "wikipedia",
+    "topics": "wikipedia",
+    "connection.url": "http://localhost:9200"
+  }
+}

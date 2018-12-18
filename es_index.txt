@@ -1,0 +1,22 @@
+DELETE wikipedia
+
+PUT wikipedia
+{
+  "mappings": {
+    "wikipedia": {
+      "properties": {
+        "prev": { "type": "keyword" },
+        "curr": { "type": "keyword" },
+        "ts": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss"
+        }
+      }
+    }
+  }
+}
+
+POST /wikipedia/_search
+{
+  "_source": true
+}
